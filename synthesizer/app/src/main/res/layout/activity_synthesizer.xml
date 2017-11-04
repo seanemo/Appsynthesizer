@@ -31,4 +31,42 @@
         android:layout_below="@+id/eButton"
         android:onClick="onButton2Click"
         android:text="@string/Button2" />
+
+    <Button
+        android:id="@+id/Challenge5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onChallenge5Click"
+        android:text="Challenge 5"
+        android:layout_below="@+id/fButton"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/Challenge12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Challenge5"
+        android:layout_marginTop="12dp"
+        android:onClick="onChallenge12Click"
+        android:text="Challenge 12" />
+
+    <Button
+        android:id="@+id/Challenge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Challenge12"
+        android:layout_marginTop="13dp"
+        android:onClick="onChallenge1Click"
+        android:text="Challenge 1"
+        android:layout_alignEnd="@+id/Challenge5" />
+    <Button
+        android:id="@+id/Challenge9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onChallenge9Clicked"
+        android:text="Challenge 9"
+        android:layout_above="@+id/Challenge12"
+        android:layout_toEndOf="@+id/Challenge12"
+        android:layout_marginStart="13dp" />
 </RelativeLayout>
