@@ -2,4 +2,8 @@
     <string name="app_name">Synthesizer</string>
     <string name="Button1">E Button</string>
     <string name="Button2">F Button</string>
+    <string name="Challenge5">Challenge 5</string>
+    <string name="Challenge12">Challenge 12</string>
+    <string name="Challenge1">Challenge 1</string>
+    <string name="Challenge9">Challenge 9</string>
 </resources>
