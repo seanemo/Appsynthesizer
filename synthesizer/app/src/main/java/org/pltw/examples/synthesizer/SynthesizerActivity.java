@@ -22,6 +22,7 @@ public class SynthesizerActivity extends AppCompatActivity {
     private MediaPlayer mpB;
     private MediaPlayer mpGS;
     private MediaPlayer mpFS;
+    private MediaPlayer mpDS;
     private MediaPlayer mpG;
     private final int WHOLE_NOTE = 1000;
 
@@ -44,13 +45,23 @@ public class SynthesizerActivity extends AppCompatActivity {
         mpB = MediaPlayer.create(this, R.raw.scaleb);
         mpGS = MediaPlayer.create(this, R.raw.scalegs);
         mpG = MediaPlayer.create(this, R.raw.scaleg);
+        mpDS = MediaPlayer.create(this, R.raw.scaleds);
     }
-
     private void delayPlaying(int delay) throws InterruptedException{
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             Log.e("SynthesizerActivity","Audio playback interrupted");
+        }
+    }
+    private void playNote(MediaPlayer note, int time) {
+        try {
+            note.seekTo(0);
+            note.start();
+            delayPlaying(time);
+            note.pause();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -67,33 +78,20 @@ public class SynthesizerActivity extends AppCompatActivity {
     }
     public void onChallenge1Click(View v) {//Matthew
         Log.e("SynthesizerActivity", "Challenge 1 Button clicked");
-        try {
-            mpE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpE.pause();
-            mpFS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpFS.pause();
-            mpG.start();
-            delayPlaying(QUARTER_NOTE);
-            mpG.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpB.start();
-            delayPlaying(QUARTER_NOTE);
-            mpB.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpHE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHE.pause();
-
-
+        try {/*This is not the same as challenge 1,
+            notes are changed(I assumed that it was Major
+            E scale so I changed some of the notes. Major E has
+            F sharp, G sharp, C sharp, and D sharp. But the
+            challenge only asked for F sharp and C sharp.*/
+            playNote(mpE, QUARTER_NOTE);
+            playNote(mpFS, QUARTER_NOTE);
+            playNote(mpGS, QUARTER_NOTE);
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpB, QUARTER_NOTE);
+            playNote(mpCS, QUARTER_NOTE);
+            playNote(mpDS, QUARTER_NOTE);
+            playNote(mpHE, QUARTER_NOTE);
+            delayPlaying(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -101,53 +99,21 @@ public class SynthesizerActivity extends AppCompatActivity {
     public void onChallenge5Click(View v) {//Harsha
         Log.e("SynthesizerActivity", "Challenge 5 Button clicked");
         try {
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpA.seekTo(0);
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpHE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHE.pause();
-            mpHE.seekTo(0);
-            mpHE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHE.pause();
-            mpHFS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHFS.pause();
-            mpHFS.seekTo(0);
-            mpHFS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHFS.pause();
-            mpHE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpHE.pause();
-
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpD.seekTo(0);
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpCS.seekTo(0);
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpB.start();
-            delayPlaying(QUARTER_NOTE);
-            mpB.pause();
-            mpB.seekTo(0);
-            mpB.start();
-            delayPlaying(QUARTER_NOTE);
-            mpB.pause();
-            mpA.start();
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpA, QUARTER_NOTE);;
+            playNote(mpHE, QUARTER_NOTE);
+            playNote(mpHE, QUARTER_NOTE);
+            playNote(mpHFS, QUARTER_NOTE);
+            playNote(mpHFS, QUARTER_NOTE);
+            playNote(mpHE, QUARTER_NOTE);
+            playNote(mpD, QUARTER_NOTE);
+            playNote(mpD, QUARTER_NOTE);
+            playNote(mpCS, QUARTER_NOTE);
+            playNote(mpCS, QUARTER_NOTE);
+            playNote(mpB, QUARTER_NOTE);
+            playNote(mpB, QUARTER_NOTE);
+            playNote(mpA, QUARTER_NOTE);
+            delayPlaying(10);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -156,153 +122,51 @@ public class SynthesizerActivity extends AppCompatActivity {
     public void onChallenge12Click(View v) {//Adrian
         Log.e("SynthesizerActivity", "Challenge 12 Button clicked");
         try {
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpE.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpD.start();
-            delayPlaying(3500);
-            mpD.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpE.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpD.start();
-            delayPlaying(3500);
-            mpD.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpA.seekTo(0);
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpA.seekTo(0);
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
+            for(int i = 0; i < 2; ++i) {
+                playNote(mpA, QUARTER_NOTE);
+                playNote(mpGS, QUARTER_NOTE);
+                playNote(mpA, QUARTER_NOTE);
+                playNote(mpGS, QUARTER_NOTE);
+                playNote(mpA, QUARTER_NOTE);
+                playNote(mpE, QUARTER_NOTE);
+                playNote(mpA, QUARTER_NOTE);
+                playNote(mpD, 3500);
+                playNote(mpA, QUARTER_NOTE);
+                playNote(mpCS, QUARTER_NOTE);
+            }
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpGS, QUARTER_NOTE);
+            playNote(mpA, WHOLE_NOTE);
+            playNote(mpGS, QUARTER_NOTE);
+            playNote(mpA, WHOLE_NOTE);
+            playNote(mpD, QUARTER_NOTE);
+            playNote(mpGS, QUARTER_NOTE);
+            playNote(mpD, QUARTER_NOTE);
             mpE.start();
             mpA.start();
             delayPlaying(850);
             mpA.pause();
             mpE.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
+            playNote(mpCS, QUARTER_NOTE);
             mpGS.start();
             mpB.start();
             delayPlaying(850);
             mpB.pause();
             mpGS.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpGS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpGS.pause();
-            mpA.start();
-            delayPlaying(1000);
-            mpA.pause();
-            mpE.start();
-            delayPlaying(QUARTER_NOTE);
-            mpE.pause();
-            mpA.start();
-            delayPlaying(QUARTER_NOTE);
-            mpA.pause();
-            mpB.start();
-            delayPlaying(QUARTER_NOTE);
-            mpB.pause();
-            mpCS.start();
-            delayPlaying(900);
-            mpCS.pause();
-            mpCS.seekTo(0);
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpE.start();
-            delayPlaying(900);
-            mpE.pause();
-            mpD.start();
-            delayPlaying(QUARTER_NOTE);
-            mpD.pause();
-            mpCS.start();
-            delayPlaying(QUARTER_NOTE);
-            mpCS.pause();
-            mpB.start();
-            delayPlaying(1100);
-            mpB.pause();
-
-
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpGS, QUARTER_NOTE);
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpE, QUARTER_NOTE);
+            playNote(mpA, QUARTER_NOTE);
+            playNote(mpB, QUARTER_NOTE);
+            playNote(mpCS, WHOLE_NOTE);
+            playNote(mpCS, QUARTER_NOTE);
+            playNote(mpD, QUARTER_NOTE);
+            playNote(mpE, WHOLE_NOTE);
+            playNote(mpD, QUARTER_NOTE);
+            playNote(mpCS, QUARTER_NOTE);
+            playNote(mpB, 1100);
+            delayPlaying(10);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -315,14 +179,10 @@ public class SynthesizerActivity extends AppCompatActivity {
         try{
 
             for (int i = 0; i < a.length; i++) {
-                a[i].seekTo(0);
-                a[i].start();
-                delayPlaying(WHOLE_NOTE);
-                a[i].pause();
+                playNote(a[i], QUARTER_NOTE);
 
             }
-
-
+            delayPlaying(10);
 
         }
         catch (InterruptedException e) {
